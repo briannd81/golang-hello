@@ -1,16 +1,5 @@
 Hello World App in GoLang
 
-.
-├── README.md
-├── build
-│   ├── Dockerfile
-│   └── hello-world.go
-└── deploy
-    ├── aws-manifests
-    └── k8s-manifests
-        └── golang-hello.yaml
-
-
 Note: this demo uses AWS ECR Private Registry, so remember to replace the values in [AWS_ACCOUNT_ID], [REGION], and [ECR_REPOSITORY].
 
 Build the Docker Image
