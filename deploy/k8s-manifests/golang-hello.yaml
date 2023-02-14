@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-hello
+spec:
+  replicas: 1
+    spec:
+      containers:
+      - image: 926831799228.dkr.ecr.us-east-1.amazonaws.com/dang-ecr:latest
+      imagePullSecrets:
+      - name: ecr-pull-secret
