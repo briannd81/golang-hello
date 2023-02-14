@@ -3,15 +3,8 @@
 ## Pre-requisites
 
 1. You have an AWS ECR Private Registry setup
-2. You have a role with permissions to upload image to ECR Private Registry
+2. You have a AWS role with permissions to create docker temporary credentials to upload image to ECR Private Registry
 3. You have AWS CLI tool installed on your machine
-4. You have ECR credential helper to push the image on your machine
-
-Set ECR credential helper so that you can authenticate and upload the image
-
-Note: the credentials are valid for 12 hours
-
-$ aws ecr get-login-password | docker login --username AWS --password-stdin [AWS_ACCOUNT_ID].dkr.ecr.[REGION].amazonaws.com
 
 Note: this demo uses the AWS ECR Private Registry, so remember to replace the values in [AWS_ACCOUNT_ID], [REGION], and [ECR_REPOSITORY].
 
@@ -29,11 +22,17 @@ $ docker run golang-hello:latest
 
 ## Push the Image to ECR
 
-1. In order for docker to push the image to ECR, the image needs proper tags
+1. Set ECR credential helper so that you can authenticate and upload the image
+
+Note: the credentials are valid for 12 hours
+
+$ aws ecr get-login-password | docker login --username AWS --password-stdin [AWS_ACCOUNT_ID].dkr.ecr.[REGION].amazonaws.com
+
+2. In order for docker to push the image to ECR, the image needs proper tags
 
 $ docker tag golang-hello:latest [AWS_ACCOUNT_ID].dkr.ecr.[REGION].amazonaws.com/[ECR_REPOSITORY]
 
-2. Push the image
+3. Push the image
 
 $ docker push [AWS_ACCOUNT_ID].dkr.ecr.[REGION].amazonaws.com/[ECR_REPOSITORY]
 
