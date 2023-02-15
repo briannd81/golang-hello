@@ -11,7 +11,7 @@ A simple docker container that prints Hello World using GoLang.
    - access to AWS ECR Private Registry, Elastic Container Service, and Cloudformation
 2. You have AWS CLI tool installed on your machine
 
-Note: this demo uses the AWS ECR Private Registry, so remember to replace the values in [AWS_ACCOUNT_ID], [REGION], and [ECR_REPOSITORY].
+Note: This demo uses the AWS ECR Private Registry. Replace the values [AWS_ACCOUNT_ID], [REGION], and [ECR_REPOSITORY] in your manifest files accordingly.
 
 ## Build the Docker Image
 
