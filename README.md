@@ -59,3 +59,6 @@ $ kubectl logs pod/[POD-NAME]
 
 ## Deploy the App to AWS ECS using Cloudformation
 
+Deploy the cloudformation template which creates the ecs task definition and the app deployed as a service
+
+- deploy/aws-manifests/golang-hello.yaml
