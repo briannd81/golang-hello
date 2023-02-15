@@ -28,7 +28,7 @@ Verify the app displays "Hello World" by running the container on your local mac
 
 1. Set ECR credential helper so that you can authenticate and upload the image
 
-Note: the credentials are valid for 12 hours
+ - Note: The credentials are valid for 12 hours
 
     $ aws ecr get-login-password | docker login --username AWS --password-stdin [AWS_ACCOUNT_ID].dkr.ecr.[REGION].amazonaws.com
 
@@ -46,7 +46,7 @@ Assuming you have aws cli and the AWS credentials that have access to ecr on the
 
 1. Create the docker registry credentials and save it to a Kubernetes secret. this is required to pull the image from ECR.
 
-Note: the credentials are valid for 12 hours
+- Note: The credentials are valid for 12 hours
 
     $ kubectl create secret docker-registry ecr-pull-secret --docker-server=[AWS_ACCOUNT_ID].dkr.ecr.[REGION].amazonaws.com --docker-username=AWS --docker-password=$(aws ecr get-login-password)
 
@@ -54,9 +54,9 @@ Note: the credentials are valid for 12 hours
 
     $ kubectl apply -f deploy/k8s-manifests/golang-hello.yaml
 
-Note: since this container only prints "Hello World" and exit, you won't be able to interact with it.
+- Note: since this container only prints "Hello World" and exit, you won't be able to interact with it.
 
-How do you check that the container prints the "Hello World"?
+- How do you check that the container prints the "Hello World"?
 
     $ kubectl logs pod/[POD-NAME]
 
