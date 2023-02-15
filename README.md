@@ -1,6 +1,6 @@
 # Hello World App in GoLang
 
-# Description
+## Description
 
 A simple docker container that prints Hello World using GoLang.
 
