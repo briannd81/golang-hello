@@ -1,5 +1,9 @@
 # Hello World App in GoLang
 
+# Description
+
+A simple docker container that prints Hello World using GoLang.
+
 ## Pre-requisites
 
 1. You already have the following AWS setup:
