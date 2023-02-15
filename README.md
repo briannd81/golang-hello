@@ -43,8 +43,6 @@ Verify the app displays "Hello World" by running the container on your local mac
 
 ## Deploy the App to a Kubernetes Cluster using a Kubernetes manifest file
 
-Assuming you have aws cli and the AWS credentials that have access to ecr on the same machine running kubectl
-
 1. Create the docker registry credentials and save it to a Kubernetes secret. this is required to pull the image from ECR.
 
 - Note: The credentials are valid for 12 hours
