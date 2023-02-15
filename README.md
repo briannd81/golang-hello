@@ -9,6 +9,7 @@ A simple docker container that prints Hello World using GoLang.
 1. You already have the following AWS setup:
    - ECS cluster
    - access to AWS ECR Private Registry, Elastic Container Service, and Cloudformation
+   - Kubernetes cluster, and access to create a kubernetes deployment
 2. You have AWS CLI tool installed on your machine
 
 Note: This demo uses the AWS ECR Private Registry. Replace the values [AWS_ACCOUNT_ID], [REGION], and [ECR_REPOSITORY] in your manifest files accordingly.
