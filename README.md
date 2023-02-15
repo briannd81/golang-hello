@@ -2,9 +2,10 @@
 
 ## Pre-requisites
 
-1. You have an AWS ECR Private Registry setup
-2. You have a AWS role with permissions to create docker temporary credentials to upload image to ECR Private Registry
+1. You have proper access to AWS ECR Private Registry, Elastic Container Service, and Cloudformation
+2. You have proper access to your AWS account to ECR and ECS
 3. You have AWS CLI tool installed on your machine
+
 
 Note: this demo uses the AWS ECR Private Registry, so remember to replace the values in [AWS_ACCOUNT_ID], [REGION], and [ECR_REPOSITORY].
 

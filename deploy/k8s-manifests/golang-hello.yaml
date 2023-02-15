@@ -6,6 +6,6 @@ spec:
   replicas: 1
     spec:
       containers:
-      - image: 926831799228.dkr.ecr.us-east-1.amazonaws.com/dang-ecr:latest
+      - image: [AWS_ACCOUNT_ID].dkr.ecr.us-east-1.amazonaws.com/[IMAGE:TAG]
       imagePullSecrets:
       - name: ecr-pull-secret
