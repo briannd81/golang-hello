@@ -2,10 +2,10 @@
 
 ## Pre-requisites
 
-1. You have proper access to AWS ECR Private Registry, Elastic Container Service, and Cloudformation
-2. You have proper access to your AWS account to ECR and ECS
-3. You have AWS CLI tool installed on your machine
-
+1. You already have the following AWS setup:
+   - ECS cluster
+   - access to AWS ECR Private Registry, Elastic Container Service, and Cloudformation
+2. You have AWS CLI tool installed on your machine
 
 Note: this demo uses the AWS ECR Private Registry, so remember to replace the values in [AWS_ACCOUNT_ID], [REGION], and [ECR_REPOSITORY].
 
@@ -58,3 +58,4 @@ How do you check that the container prints the "Hello World"?
 $ kubectl logs pod/[POD-NAME]
 
 ## Deploy the App to AWS ECS using Cloudformation
+

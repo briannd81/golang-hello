@@ -1,10 +1,22 @@
 ---
 AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  ContainerImageUri:
+    Type: String
+    Description: 'uri of the container image'
+  EcsClusterName:
+    Type: String
+    Description: 'name of the ecs cluster'
+  NetworkSubnet:
+    Type: String
+    Description: 'network subnet in vpc'
+  NetworkSecurityGroup:
+    Type: String
+    Description: 'network security group in vpc'
 Resources:
   MyTaskExecutionRole:
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: 'MyTaskExecutionRole'
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -22,7 +34,22 @@ Resources:
       ExecutionRoleArn: !Ref MyTaskExecutionRole
       Cpu: '512'
       Memory: '1024'
+      RequiresCompatibilities:
+        - 'FARGATE'
+      NetworkMode: 'awsvpc'
       ContainerDefinitions:
         - Name: 'golang-hello'
-          Image: '[AWS_ACCOUNT_ID].dkr.ecr.us-east-1.amazonaws.com/[IMAGE:TAG]'
+          Image: !Ref ContainerImageUri
           Memory: '512'
+  MyService:
+    Type: 'AWS::ECS::Service'
+    Properties:
+      TaskDefinition: !Ref MyTaskDefinition
+      Cluster: !Ref EcsClusterName
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          SecurityGroups:
+            - !Ref NetworkSecurityGroup
+          Subnets:
+            - !Ref NetworkSubnet
+            
